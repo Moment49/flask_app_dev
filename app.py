@@ -1,8 +1,13 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, url_for, redirect
 from flask_script import Manager
+from flask_bootstrap import Bootstrap
+
 
 app = Flask(__name__)
-manager = Manager(app)
+# manager = Manager(app)
+bootstrap = Bootstrap(app)
+
+
 
 @app.route('/')
 def index():
@@ -10,7 +15,7 @@ def index():
     # user_agent = request.headers.get('User-Agent')
     # return f'<h1>Your browser is {user_agent}</!h1>'
     # return '<h1>Bad request</h1>', 400
-    # return '<h1>Bad request</h1>'
+    # return '<h1>Bad requepst</h1>'
 
 # @app.route('/')
 # def index():
@@ -37,8 +42,28 @@ def index():
 #         abort(404)
 #     return f'<h1>Hello, {user}</h1>'
 
+@app.route('/user/<name>')
+def user(name):
+    if name == 'invalid':
+        return render_template('404.html')
+    else:
+        return render_template('user.html', name=name)
+
+# @app.route('/item/')
+# def item():
+#     pack = 'Milk'
+#     return render_template('test.html', item=pack)
+
+#Handling custo errors pages
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template('404.html'), 404
+
+# @app.errorhandler(500)
+# def internal_server_error(e):
+#     return render_template('500.html'), 500
 
 
 if __name__ == '__main__':
-    # app.run(debug=True)
-    manager.run()
+    app.run(debug=True)
+    # manager.run()

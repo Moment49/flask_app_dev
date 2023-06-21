@@ -1,0 +1,46 @@
+{% extends "base2.html" %}
+{% block title %}test{% endblock %}
+{% block head %}
+    {{ super()}}
+    <style>
+    </style>
+{% endblock %}    
+{% block body %}    
+<h1>Hello world!  to {{item}}</h1>    
+{% endblock %}    
+
+
+
+    <!-- <h1>Hello {{ name|capitalize }}</h1>
+    <h2>Hello {{ name|striptags }}</h2> -->
+    <!-- Control Structures -->
+    <!-- {% if name %}
+        <p>Hello {{ name }}</p>
+    {% else %}
+        <p>Hello, Stranger!</p>
+    {% endif %}
+
+    Rendering a list
+    <ul>
+        {% for comment in comments %}
+            <li>{{ comment }}</li>
+        {% endfor %}
+    </ul>
+
+    Rendering a list using a function
+   {% macro render_comment(comment) %}
+        <li>{{comment}}</li>
+    {% endmacro %}    
+    <ul>
+        {% for comment in comments %}
+            <li>{{ render_comment(comment) }}</li>
+        {% endfor %}
+    </ul> -->
+
+    <!-- Store macros in file -->
+    <!-- {% import 'macros.html' as macros %}
+    <ul>
+        {% for comment in comments %}
+            <li>{{macros.render_comment(comment) }}</li>
+        {% endfor %}
+    </ul> -->
