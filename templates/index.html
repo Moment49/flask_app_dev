@@ -1,12 +1,13 @@
-{% extends 'base2.html' %}
+{% extends 'base.html' %}
+{% import "bootstrap/wtf.html" as wtf %}
 {% block title %}Pie-Books - Index Page{% endblock %}
-{% block head %}
-    {{ super()}}
-{% endblock %}   
 
-{% block body %}    
-    <h1>Hello world!  I have learnt how to render templates in flask </h1>
-    <h2>
-        <a href="{{ url_for('user', name='Dave') }}">Link user</a>
-    </h2>    
+ {{super()}}
+
+
+{% block page_content %}    
+    <div>
+        <h1>Hello, {% if name %}{{name}}{% else %}Stranger{% endif %}!</h1>
+    </div>
+    {{wtf.quick_form(form)}}   
 {% endblock %}   

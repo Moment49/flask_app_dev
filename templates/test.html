@@ -11,6 +11,8 @@
 
 
 
+    <!-- <p>The local date and time is {{moment(current_time).format('LLL')}}</p>
+    <p>That was {{ moment(current_time).fromNow(refresh=True) }}</p> -->
     <!-- <h1>Hello {{ name|capitalize }}</h1>
     <h2>Hello {{ name|striptags }}</h2> -->
     <!-- Control Structures -->
@@ -44,3 +46,18 @@
             <li>{{macros.render_comment(comment) }}</li>
         {% endfor %}
     </ul> -->
+
+
+    <!-- <h1>Hello world!  I have learnt how to render templates in flask </h1>
+    <h2>
+        <a href="{{ url_for('user', name='Dave') }}">Link user</a>
+    </h2>  -->
+
+      <!-- <form method="POST">
+        {{ form.name.label}} {{form.name()}}
+        {{form.submit()}}
+    </form> -->
+
+       <!-- {{ super()}}
+    {{ moment.include_moment() }}
+    {{moment.lang('es')}} -->
